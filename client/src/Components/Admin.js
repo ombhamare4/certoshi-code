@@ -197,6 +197,7 @@ class Admin extends React.Component {
           let smartContractOwner = await institution.methods.owner().call()
           console.log('smartContractOwner', smartContractOwner)
           // compare the caller and the owner of smart contract
+          console.log(caller)
           if (caller == smartContractOwner) {
             // give access to the page
             this.setState({
@@ -211,7 +212,7 @@ class Admin extends React.Component {
               renderAdmin: false,
             })
             // window.alert("You are not the admin");
-            toast.warning('❕ You are not authorized to access this page')
+            toast.warning('❕ You are not authorized to access this page okay')
           }
         } catch (error) {
           console.log('error is', error)
